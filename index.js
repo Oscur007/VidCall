@@ -6,9 +6,9 @@ const { Server } = require("socket.io");
 const port = process.env.PORT || 8000;
 
 const app = express();
-app.use(express.static(path.resolve(__dirname , "../" , process.env.FRONTEND)));
+app.use(express.static(path.resolve(__dirname , process.env.FRONTEND)));
 app.get("*" , (req , res)=> {
-  res.sendFile(path.resolve(__dirname , "../" , process.env.FRONTEND , "index.html"));
+  res.sendFile(path.resolve(__dirname , process.env.FRONTEND , "index.html"));
 })
 
 const server = app.listen(port);
